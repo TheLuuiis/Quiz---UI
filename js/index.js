@@ -54,7 +54,7 @@
             option.classList.remove("correct", "incorrect"); // Limpiar estilos
             option.onclick = () => checkAnswer(index);
         });
-    }
+    };
     
     // Función para verificar la respuesta
     function checkAnswer(selectedIndex) {
@@ -120,3 +120,50 @@ restartButton.onclick = () => {
     score = 0;
     currentCategory = "";
 };
+
+/* Animaciones */
+document.addEventListener("DOMContentLoaded", function () {
+    const loader = document.createElement("div");
+    loader.classList.add("loader");
+    document.body.appendChild(loader);
+
+    // Estilos del loader
+    const style = document.createElement("style");
+    style.innerHTML = `
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #282c34;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .spinner {
+            width: 80px;
+            height: 80px;
+            border: 8px solid rgba(255, 255, 255, 0.3);
+            border-top: 8px solid white;
+            border-radius: 50%;
+            animation: spin 1.5s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Añadir el spinner
+    const spinner = document.createElement("div");
+    spinner.classList.add("spinner");
+    loader.appendChild(spinner);
+
+    setTimeout(() => {
+        loader.style.opacity = "0";
+        setTimeout(() => loader.remove(), 500);
+    }, 2000);
+});
