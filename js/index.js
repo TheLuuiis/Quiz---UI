@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
             justify-content: center;
             align-items: center;
             z-index: 1000;
-            transition: opacity 0.9s ease-out;
+            transition: opacity 0.8s ease-out;
         }
         .spinner {
             width: 80px;
