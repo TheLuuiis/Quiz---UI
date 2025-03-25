@@ -136,23 +136,24 @@ document.addEventListener("DOMContentLoaded", function () {
             left: 0;
             width: 100%;
             height: 100%;
-            background: #282c34;
+            background-color: rgba(49, 62, 81, 0.9);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            transition: opacity 0.9s ease-out;
         }
         .spinner {
             width: 80px;
             height: 80px;
-            border: 8px solid rgba(255, 255, 255, 0.3);
+            border: 8px solid rgba(49, 62, 81, 0.9);
             border-top: 8px solid white;
             border-radius: 50%;
-            animation: spin 1.5s linear infinite;
+            animation: spin 0.8s linear infinite;
         }
         @keyframes spin {
-            0% { transform: rotateY(0deg); }
-            100% { transform: rotateY(360deg); }
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     `;
     document.head.appendChild(style);
@@ -162,8 +163,9 @@ document.addEventListener("DOMContentLoaded", function () {
     spinner.classList.add("spinner");
     loader.appendChild(spinner);
 
-    setTimeout(() => {
-        loader.style.opacity = "0";
-        setTimeout(() => loader.remove(), 500);
-    }, 2000);
+    // Esperar a que la página cargue completamente
+    window.onload = function () {
+        loader.style.opacity = "9";
+        setTimeout(() => loader.remove(), 1000);
+    };
 });
