@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Front-End</title>
+    
+    <!-- Icono -->
+    <link rel="shortcut icon" href="../img/Favicon.png" type="image/x-icon"/>
+    
+    <!-- Librerías -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Imagen de fondo -->
+        <div class="container-img">
+            <figure>
+                <img src="./img/fondoo.svg" alt="Fondo">
+            </figure>
+        </div>
+        <!-- Contenedor del quiz -->
+        <div class="container-quiz">
+            <!-- Theme Dark -->
+            <div class="toggle-container">
+                    <input type="checkbox" id="toggle-dark-mode" class="toggle-checkbox">
+                <label for="toggle-dark-mode" class="toggle-label">
+                    <span class="toggle-sun">☀️</span>
+                    <span class="toggle-moon">🌙</span>
+                </label>
+            </div>
+            <!-- Pantalla de bienvenida -->
+            <div class="container-major" id="containerWelcome">
+                <div class="description-quiz">
+                    <h1><font>¡Bienvenido al</font> cuestionario Frontend!</h1>
+                    <p>Escoge un tema para empezar.</p>
+                </div>
+                <div class="options-quiz">
+                    <button id="html">
+                        <div class="button-icon">
+                            <img src="./img/icon-html.svg" alt="HTML">
+                        </div>
+                        <font>HTML5</font>
+                    </button>
+                    <button id="css">
+                        <div class="button-icon">
+                            <img src="./img/icon-css.svg" alt="CSS">
+                        </div>
+                        <font>CSS3</font>
+                    </button>
+                    <button id="javascript">
+                        <div class="button-icon">
+                            <img src="./img/icon-js.svg" alt="JavaScript"> 
+                        </div>
+                        <font>JavaScript</font>
+                    </button>
+                </div>
+            </div>
+            <!-- Pantalla del quiz -->
+            <div class="quiz" id="quizContainer" style="display: none;">
+                <h1 id="question"></h1>
+                <div class="quiz-option">
+                    <ul>
+                        <li class="answer" id="option1"></li>
+                        <li class="answer" id="option2"></li>
+                        <li class="answer" id="option3"></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <!-- Contenedor de resultados -->
+            <div id="resultContainer">
+                <h1 id="resultText"></h1>
+                <button id="restartButton">Regresar al inicio</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/index.js"></script>
+</body>
+</html>
